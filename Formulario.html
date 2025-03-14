@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Recomendador de Sistema Operativo y Sugerencias de Hardware</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    select, input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      width: 100%;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Recomendador de Sistema Operativo y Hardware</h1>
+    <form id="osForm">
+      <!-- El procesadoor para elegir -->
+      <label for="processor">Procesador</label>
+      <select id="processor" required>
+        <option value="1">Básico (menos de 2 GHz)</option>
+        <option value="2">Intermedio (2-3 GHz)</option>
+        <option value="3">Avanzado (más de 3 GHz)</option>
+      </select>
+
+      <label for="ram">RAM</label>
+      <select id="ram" required>
+        <option value="4">4 GB</option>
+        <option value="8">8 GB</option>
+        <option value="16">16 GB</option>
+        <option value="32">32 GB</option>
+      </select>
+
+      <label for="storage">Almacenamiento</label>
+      <select id="storage" required>
+        <option value="128">128 GB</option>
+        <option value="256">256 GB</option>
+        <option value="512">512 GB</option>
+        <option value="1024">1 TB</option>
+      </select>
+
+      <!-- Seccion de la gpuuu-->
+      <label for="gpuBrand">Marca de Tarjeta Gráfica</label>
+      <select id="gpuBrand" required onchange="actualizarModelos()">
+        <option value="">-- Selecciona una marca --</option>
+        <option value="nvidia">Nvidia</option>
+        <option value="amd">AMD</option>
+        <option value="intel">Intel</option>
+      </select>
+
+      <div id="gpuModelContainer" style="display:none;">
+        <label for="gpuModel">Modelo de Tarjeta Gráfica</label>
+        <select id="gpuModel" required>
+        </select>
+      </div>
+
+      <button type="button" onclick="recomendarOS()">Obtener Recomendación</button>
+    </form>
+    <div class="result" id="resultado"></div>
+  </div>
+
+  <script>
+    // "Declara"
+    const gpuModels = {
+      nvidia: [
+        { value: "gtx1050", text: "Nvidia GTX 1050" },
+        { value: "gtx1650", text: "Nvidia GTX 1650" },
+        { value: "rtx2060", text: "Nvidia RTX 2060" },
+        { value: "rtx3060", text: "Nvidia RTX 3060" },
+        { value: "rtx3070", text: "Nvidia RTX 3070" },
+        { value: "rtx3080", text: "Nvidia RTX 3080" },
+        { value: "rtx3090", text: "Nvidia RTX 3090" },
+        { value: "rtx4090", text: "Nvidia RTX 4090" }
+      ],
+      amd: [
+        { value: "rx550", text: "AMD Radeon RX 550" },
+        { value: "rx560", text: "AMD Radeon RX 560" },
+        { value: "rx570", text: "AMD Radeon RX 570" },
+        { value: "rx580", text: "AMD Radeon RX 580" },
+        { value: "rx590", text: "AMD Radeon RX 590" },
+        { value: "rx5600xt", text: "AMD Radeon RX 5600 XT" },
+        { value: "rx5700xt", text: "AMD Radeon RX 5700 XT" },
+        { value: "rx6800", text: "AMD Radeon RX 6800" },
+        { value: "rx6800xt", text: "AMD Radeon RX 6800 XT" },
+        { value: "rx6900xt", text: "AMD Radeon RX 6900 XT" }
+      ],
+      intel: [
+        { value: "intel_hd", text: "Intel HD Graphics" },
+        { value: "intel_uhd", text: "Intel UHD Graphics" },
+        { value: "intel_iris", text: "Intel Iris Graphics" },
+        { value: "intel_iris_plus", text: "Intel Iris Plus" },
+        { value: "intel_xe", text: "Intel Xe Graphics" }
+      ]
+    };
+
+    function actualizarModelos() {
+      const brand = document.getElementById("gpuBrand").value;
+      const modelContainer = document.getElementById("gpuModelContainer");
+      const gpuModelSelect = document.getElementById("gpuModel");
+
+ 
+      gpuModelSelect.innerHTML = "";
+
+      if (brand && gpuModels[brand]) {
+        modelContainer.style.display = "block";
+        gpuModels[brand].forEach(function(option) {
+          const opt = document.createElement("option");
+          opt.value = option.value;
+          opt.textContent = option.text;
+          gpuModelSelect.appendChild(opt);
+        });
+      } else {
+        modelContainer.style.display = "none";
+      }
+    }
+
+    //Evalua todo en general y te da recpmienda el sistema operativo
+    function recomendarOS() {
+      const processor = parseInt(document.getElementById("processor").value);
+      const ram = parseInt(document.getElementById("ram").value);
+      const storage = parseInt(document.getElementById("storage").value);
+      const gpuBrand = document.getElementById("gpuBrand").value;
+      const gpuModel = document.getElementById("gpuModel").value;
+      let recommendations = "";
+
+      // Evalua el procesador
+      if (processor === 1) {
+        recommendations += "Procesador básico. Se recomienda actualizar a un procesador intermedio o avanzado para mejorar el rendimiento. ";
+      } else if (processor === 2) {
+        recommendations += "Procesador intermedio. ";
+      } else if (processor === 3) {
+        recommendations += "Procesador avanzado. ";
+      }
+
+      // Evalua la ramm
+      if (ram <= 4) {
+        recommendations += "La RAM es muy baja; se recomienda actualizar a al menos 8 GB para un desempeño óptimo. ";
+      } else if (ram === 8) {
+        recommendations += "La RAM es aceptable, aunque se podría mejorar para mayor rendimiento. ";
+      } else {
+        recommendations += "La cantidad de RAM es adecuada. ";
+      }
+
+      // EEvalua el disco duro (Almacenamientoo)
+      if (storage <= 128) {
+        recommendations += "El almacenamiento es limitado; se recomienda aumentar la capacidad para un mejor manejo de datos. ";
+      } else {
+        recommendations += "La capacidad de almacenamiento es adecuada. ";
+      }
+
+      // Evalua el Gpua y te recomienda un sistema operativo potimo para tu pcc
+      if (gpuBrand === "nvidia") {
+        if (["gtx1050", "gtx1650"].includes(gpuModel)) {
+          recommendations += "Con tu Nvidia " + gpuModel.toUpperCase() + ", se recomienda un sistema operativo ligero o una distribución Linux básica.";
+        } else if (["rtx2060", "rtx3060", "rtx3070"].includes(gpuModel)) {
+          recommendations += "Con tu Nvidia " + gpuModel.toUpperCase() + ", se recomienda una distribución Linux equilibrada o Windows 10.";
+        } else if (["rtx3080", "rtx3090", "rtx4090"].includes(gpuModel)) {
+          recommendations += "Con tu Nvidia " + gpuModel.toUpperCase() + ", tu PC es de alta gama, ideal para Windows 10/11 o Linux avanzado.";
+        }
+      } else if (gpuBrand === "amd") {
+        if (["rx550", "rx560", "rx570", "rx580", "rx590"].includes(gpuModel)) {
+          recommendations += "Con tu AMD Radeon " + gpuModel.toUpperCase() + ", se recomienda una distribución Linux ligera o Windows 10 en configuración básica.";
+        } else if (["rx5600xt", "rx5700xt"].includes(gpuModel)) {
+          recommendations += "Con tu AMD Radeon " + gpuModel.toUpperCase() + ", se recomienda una configuración equilibrada en Linux o Windows 10.";
+        } else if (["rx6800", "rx6800xt", "rx6900xt"].includes(gpuModel)) {
+          recommendations += "Con tu AMD Radeon " + gpuModel.toUpperCase() + ", tu equipo es potente, ideal para sistemas operativos avanzados.";
+        }
+      } else if (gpuBrand === "intel") {
+        recommendations += "Con tu tarjeta " + gpuModel.toUpperCase() + " de Intel, se recomienda un sistema operativo ligero como Lubuntu o Linux Lite.";
+      } else {
+        recommendations += "Por favor, revisa las especificaciones seleccionadas para una recomendación adecuada.";
+      }
+
+      document.getElementById("resultado").textContent = recommendations;
+    }
+  </script>
+</body>
+</html>
