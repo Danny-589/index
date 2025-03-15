@@ -2,105 +2,58 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Instalación de Windows 10/11</title>
+  <title>Instalación de Windows</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CSS.css">
   <style>
-    .install-section {
+    body {
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .main-content {
       max-width: 900px;
       margin: 0 auto;
-      padding: 40px 20px;
-    }
-    .install-section h1 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
+      padding: 80px 20px 40px; 
       text-align: center;
+    }
+    .main-content h1 {
+      margin-bottom: 20px;
+      font-size: 2rem;
       text-transform: uppercase;
     }
-    .install-section p {
+    .install-steps {
+      text-align: left;
+      margin: 20px auto 40px;
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 800px;
+    }
+    .install-steps ol {
+      margin-left: 20px;
       line-height: 1.6;
-      margin-bottom: 20px;
-      color: #ccc;
     }
-    .steps-list {
-      margin-bottom: 30px;
-      padding-left: 1.5rem;
-    }
-    .steps-list li {
+    .install-steps li {
       margin-bottom: 10px;
     }
-
-    .additional-info {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #1a1a1a;
-      border-radius: 8px;
-    }
-    .additional-info h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      color: #eb9ac0;
-    }
-    .info-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .info-card {
-      background-color: #000;
-      padding: 20px;
-      border-radius: 8px;
-      width: 280px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-      transition: transform 0.3s ease;
-    }
-    .info-card:hover {
-      transform: translateY(-5px);
-    }
-    .info-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-    .info-card p {
-      color: #ccc;
-      line-height: 1.5;
-    }
-
     .download-section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #1a1a1a;
-      border-radius: 8px;
-      text-align: center;
+      margin-top: 40px;
     }
-    .download-section h2 {
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      color: #eb9ac0;
-    }
-    .download-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .download-buttons a {
+    .download-btn {
       display: inline-block;
-      padding: 12px 24px;
+      margin: 10px;
+      padding: 15px 30px;
       background-color: #eb9ac0;
       color: #fff;
-      text-decoration: none;
       font-weight: bold;
-      text-transform: uppercase;
+      text-decoration: none;
       border-radius: 4px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s;
+      text-transform: uppercase;
     }
-    .download-buttons a:hover {
+    .download-btn:hover {
       background-color: #d981a6;
     }
   </style>
@@ -131,36 +84,29 @@
     </div>
   </header>
 
-  <main style="margin-top: 60px;">
-    <section class="install-section">
-      <h1>Instalación de Windows 10/11</h1>
-      <p>
-        A continuación encontrarás una guía resumida de los pasos necesarios para instalar Windows 10 o 11 en tu equipo. 
-        Recuerda contar con una licencia válida y realizar respaldos de tus datos antes de formatear tu PC.
-      </p>
-      <ol class="steps-list">
+  <div class="main-content">
+    <h1>Cómo instalar Windows (10 / 11)</h1>
+    <div class="install-steps">
+      <p>A continuación encontrarás una guía resumida de los pasos necesarios para instalar Windows 10 o 11 en tu equipo. Recuerda contar con una licencia válida y realizar respaldos de tus datos antes de formatear tu PC.</p>
+      <ol>
         <li><strong>Crear un USB booteable:</strong> Descarga la herramienta oficial de Microsoft (Media Creation Tool) o utiliza Rufus para crear tu USB de instalación.</li>
         <li><strong>Configurar la BIOS/UEFI:</strong> Asegúrate de que el orden de arranque priorice la unidad USB donde está el instalador.</li>
-        <li><strong>Iniciar la instalación:</strong> Reinicia tu PC y, cuando aparezca el instalador de Windows, selecciona el idioma y la versión que desees (Windows 10 u 11).</li>
+        <li><strong>Iniciar la instalación:</strong> Reinicia tu PC y, cuando aparezca el instalador de Windows, selecciona el idioma y la versión que desees.</li>
         <li><strong>Seleccionar disco y particiones:</strong> Elige la partición donde deseas instalar Windows. Puedes formatear o crear nuevas particiones según tus necesidades.</li>
         <li><strong>Proceso de instalación:</strong> Espera a que el instalador copie los archivos. Tu equipo se reiniciará varias veces.</li>
         <li><strong>Configuración inicial:</strong> Una vez finalizada la instalación, configura la cuenta, la contraseña y la privacidad según tus preferencias.</li>
         <li><strong>Instalar controladores y actualizaciones:</strong> Usa Windows Update y/o la web de tu fabricante para descargar los drivers necesarios.</li>
       </ol>
-      <p>
-        Si deseas una instalación limpia y sin problemas, asegúrate de que tu hardware cumpla con los requisitos mínimos recomendados.
-      </p>
-    </section>
+    </div>
 
-    <section class="download-section">
+    <div class="download-section">
       <h2>Descargar Windows</h2>
-      <div class="download-buttons">
-        <a href="https://www.microsoft.com/es-es/software-download/windows10" target="_blank" rel="noopener">Descargar Windows 10</a>
-        <a href="https://www.microsoft.com/es-es/software-download/windows11" target="_blank" rel="noopener">Descargar Windows 11</a>
-      </div>
-    </section>
-  </main>
+      <a href="https://www.microsoft.com/es-es/software-download/windows10" class="download-btn" target="_blank" rel="noopener">Descargar Windows 10</a>
+      <a href="https://www.microsoft.com/es-es/software-download/windows11" class="download-btn" target="_blank" rel="noopener">Descargar Windows 11</a>
+    </div>
+  </div>
 
+ 
   <script src="Jscorsair.js"></script>
 </body>
 </html>
