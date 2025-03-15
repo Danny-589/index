@@ -40,27 +40,3 @@ if (tabBtnInstalacion && tabBtnInfo && guidesTabsContent) {
   });
 }
 
-// ---------------------------------------------------------------------------
-// (Opcional) Tabs para "categorías" y "destacados" si usas data-tab="categorias"/"destacados"
-// ---------------------------------------------------------------------------
-// Si NO usas estos tabs en tu HTML, comenta o elimina este bloque para evitar errores.
-// ---------------------------------------------------------------------------
-const btnCategorias = document.querySelector('.tab-link[data-tab="categorias"]');
-const btnDestacados = document.querySelector('.tab-link[data-tab="destacados"]');
-const tabsContentWrapper = document.querySelector('.tabs-content-wrapper');
-
-if (btnCategorias && btnDestacados && tabsContentWrapper) {
-  btnCategorias.addEventListener('click', () => {
-    btnCategorias.classList.add('active');
-    btnDestacados.classList.remove('active');
-    // Mueve el contenedor de tabs a la primera mitad (0%)
-    tabsContentWrapper.style.transform = 'translateX(0)';
-  });
-
-  btnDestacados.addEventListener('click', () => {
-    btnDestacados.classList.add('active');
-    btnCategorias.classList.remove('active');
-    // Mueve el contenedor de tabs a la segunda mitad (-50%)
-    tabsContentWrapper.style.transform = 'translateX(-50%)';
-  });
-}
