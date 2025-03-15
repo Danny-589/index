@@ -426,3 +426,20 @@ main {
 .slide.active {
   opacity: 1;
 }
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #eb9ac0; /* Rosa */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #d981a6; /* Un tono más oscuro al pasar el ratón */
+}
