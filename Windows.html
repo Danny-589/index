@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <title>Instalación de Windows 10/11</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="CSS.css">
   <style>
+
     .install-section {
       max-width: 900px;
       margin: 0 auto;
@@ -69,9 +71,44 @@
       color: #ccc;
       line-height: 1.5;
     }
+
+    .download-section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .download-section h2 {
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: #eb9ac0;
+    }
+    .download-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .download-buttons a {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #eb9ac0;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    .download-buttons a:hover {
+      background-color: #d981a6;
+    }
   </style>
 </head>
 <body>
+
   <header>
     <div class="main-nav">
       <div class="logo">
@@ -96,7 +133,9 @@
     </div>
   </header>
 
+
   <main style="margin-top: 60px;">
+
     <section class="install-section">
       <h1>Instalación de Windows 10/11</h1>
       <p>
@@ -113,7 +152,7 @@
         <li><strong>Instalar controladores y actualizaciones:</strong> Usa Windows Update y/o la web de tu fabricante para descargar los drivers necesarios.</li>
       </ol>
       <p>
-        Si deseas una instalación limpia y sin problemas, asegúrate de que tu hardware cumpla los requisitos mínimos recomendados.
+        Si deseas una instalación limpia y sin problemas, asegúrate de que tu hardware cumpla con los requisitos mínimos recomendados.
       </p>
     </section>
 
@@ -130,7 +169,7 @@
         <div class="info-card">
           <h3>Requisitos del Sistema</h3>
           <p>
-            Asegúrate de que tu PC cumpla con los requisitos mínimos: procesador compatible, 4 GB de RAM (recomendado 8 GB o más) y suficiente espacio en disco.
+            Asegúrate de que tu PC cumpla con los requisitos mínimos: procesador compatible, al menos 4 GB de RAM (recomendado 8 GB o más) y suficiente espacio en disco.
           </p>
         </div>
         <div class="info-card">
@@ -139,6 +178,15 @@
             Después de la instalación, actualiza tus drivers, personaliza la configuración de inicio y aprovecha las nuevas funciones para optimizar el rendimiento.
           </p>
         </div>
+      </div>
+    </section>
+
+
+    <section class="download-section">
+      <h2>Descargar Windows</h2>
+      <div class="download-buttons">
+        <a href="https://www.microsoft.com/es-es/software-download/windows10" target="_blank" rel="noopener">Descargar Windows 10</a>
+        <a href="https://www.microsoft.com/es-es/software-download/windows11" target="_blank" rel="noopener">Descargar Windows 11</a>
       </div>
     </section>
   </main>
