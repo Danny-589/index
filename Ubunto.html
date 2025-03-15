@@ -4,62 +4,100 @@
   <meta charset="UTF-8">
   <title>Instalación de Ubuntu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Vincular hoja de estilos principal (para header y layout) -->
   <link rel="stylesheet" href="CSS.css">
   <style>
     body {
-      background-color: #000;
-      color: #fff;
       margin: 0;
       font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #141414 0%, #1e1e1e 100%);
+      color: #fff;
     }
-    .main-content {
+    .install-container {
       max-width: 900px;
-      margin: 0 auto;
-      padding: 80px 20px 40px;
+      margin: 80px auto 40px;
+      padding: 20px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+    }
+    .install-container h1 {
       text-align: center;
-    }
-    .main-content h1 {
+      font-size: 2.2rem;
       margin-bottom: 20px;
-      font-size: 2rem;
       text-transform: uppercase;
+      background: linear-gradient(to right, #eb9ac0, #9e6fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .install-steps {
-      text-align: left;
-      margin: 20px auto 40px;
-      background-color: #1a1a1a;
+    .install-container p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #ccc;
+      text-align: center;
+      font-size: 1rem;
+    }
+    .step-list {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
       padding: 20px;
       border-radius: 8px;
-      max-width: 800px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+      border: 1px solid rgba(255,255,255,0.1);
     }
-    .install-steps ol {
+    .step-list ol {
       margin-left: 20px;
-      line-height: 1.6;
+      padding-left: 0;
     }
-    .install-steps li {
-      margin-bottom: 10px;
+    .step-list li {
+      margin-bottom: 12px;
+      color: #e0e0e0;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 10px;
+    }
+    .step-list li::before {
+      content: "★";
+      color: #eb9ac0;
+      position: absolute;
+      left: -15px;
+      font-size: 1rem;
+    }
+    .step-list li strong {
+      color: #fff;
     }
     .download-section {
-      margin-top: 40px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .download-section h2 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      color: #eb9ac0;
     }
     .download-btn {
       display: inline-block;
       margin: 10px;
-      padding: 15px 30px;
-      background-color: #eb9ac0;
+      padding: 14px 28px;
+      background: linear-gradient(to right, #eb9ac0, #9e6fff);
       color: #fff;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 0.3s;
+      border-radius: 8px;
       text-transform: uppercase;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
     .download-btn:hover {
-      background-color: #d981a6;
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     }
   </style>
 </head>
 <body>
-
+  <!-- HEADER -->
   <header>
     <div class="main-nav">
       <div class="logo">
@@ -84,24 +122,28 @@
     </div>
   </header>
 
-  <div class="main-content">
+  <div class="install-container">
     <h1>Cómo instalar Ubuntu</h1>
-    <div class="install-steps">
-      <p>Ubuntu es una de las distribuciones Linux más populares. A continuación, te mostramos los pasos básicos para su instalación:</p>
+    <p>
+      Ubuntu es una de las distribuciones Linux más populares. A continuación,  
+      te mostramos los pasos básicos para su instalación:
+    </p>
+    <div class="step-list">
       <ol>
         <li><strong>Descargar Ubuntu:</strong> Obtén la imagen ISO oficial desde el sitio de Ubuntu.</li>
         <li><strong>Crear USB booteable:</strong> Usa Rufus, Etcher u otra herramienta para grabar la ISO en una memoria USB.</li>
         <li><strong>Configurar la BIOS/UEFI:</strong> Ajusta el orden de arranque para iniciar desde el USB.</li>
-        <li><strong>Seleccionar instalación:</strong> Cuando aparezca el instalador, elige “Instalar Ubuntu” o “Probar Ubuntu” (para un modo Live).</li>
-        <li><strong>Particionado:</strong> Selecciona si deseas instalar junto a otro SO o formatear el disco. Crea particiones según tus necesidades.</li>
+        <li><strong>Seleccionar instalación:</strong> Cuando aparezca el instalador, elige “Instalar Ubuntu” o “Probar Ubuntu”.</li>
+        <li><strong>Particionado:</strong> Selecciona si deseas instalar junto a otro SO o formatear el disco.</li>
         <li><strong>Proceso de instalación:</strong> Espera mientras se copian los archivos. El equipo se reiniciará al finalizar.</li>
-        <li><strong>Configuración inicial:</strong> Elige tu nombre de usuario, contraseña y la configuración regional. Luego, el sistema estará listo para usar.</li>
+        <li><strong>Configuración inicial:</strong> Elige tu nombre de usuario, contraseña y la configuración regional.</li>
       </ol>
     </div>
-    
     <div class="download-section">
       <h2>Descargar Ubuntu</h2>
-      <a href="https://ubuntu.com/download/desktop" class="download-btn" target="_blank" rel="noopener">Descargar Ubuntu</a>
+      <a href="https://ubuntu.com/download/desktop" 
+         target="_blank" rel="noopener" 
+         class="download-btn">Descargar Ubuntu</a>
     </div>
   </div>
 

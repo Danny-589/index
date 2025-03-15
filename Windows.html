@@ -4,62 +4,107 @@
   <meta charset="UTF-8">
   <title>Instalación de Windows</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Vincular hoja de estilos principal (para header y layout) -->
   <link rel="stylesheet" href="CSS.css">
   <style>
+    /* ======= FONDO GENERAL ======= */
     body {
-      background-color: #000;
-      color: #fff;
       margin: 0;
       font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #141414 0%, #1e1e1e 100%);
+      color: #fff;
     }
-    .main-content {
+    /* ======= CONTENEDOR PRINCIPAL ======= */
+    .install-container {
       max-width: 900px;
-      margin: 0 auto;
-      padding: 80px 20px 40px; 
+      margin: 80px auto 40px; /* espacio para header fijo */
+      padding: 20px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px); /* si tu navegador lo soporta */
+    }
+    /* ======= TÍTULO PRINCIPAL ======= */
+    .install-container h1 {
       text-align: center;
-    }
-    .main-content h1 {
+      font-size: 2.2rem;
       margin-bottom: 20px;
-      font-size: 2rem;
       text-transform: uppercase;
+      background: linear-gradient(to right, #eb9ac0, #9e6fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    .install-steps {
-      text-align: left;
-      margin: 20px auto 40px;
-      background-color: #1a1a1a;
+    /* ======= PÁRRAFOS ======= */
+    .install-container p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #ccc;
+      text-align: center;
+      font-size: 1rem;
+    }
+    /* ======= LISTA DE PASOS ======= */
+    .step-list {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
       padding: 20px;
       border-radius: 8px;
-      max-width: 800px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+      border: 1px solid rgba(255,255,255,0.1);
     }
-    .install-steps ol {
+    .step-list ol {
       margin-left: 20px;
-      line-height: 1.6;
+      padding-left: 0;
     }
-    .install-steps li {
-      margin-bottom: 10px;
+    .step-list li {
+      margin-bottom: 12px;
+      color: #e0e0e0;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 10px;
     }
+    .step-list li::before {
+      content: "★";
+      color: #eb9ac0;
+      position: absolute;
+      left: -15px;
+      font-size: 1rem;
+    }
+    .step-list li strong {
+      color: #fff;
+    }
+    /* ======= SECCIÓN DESCARGA ======= */
     .download-section {
-      margin-top: 40px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .download-section h2 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      color: #eb9ac0;
     }
     .download-btn {
       display: inline-block;
       margin: 10px;
-      padding: 15px 30px;
-      background-color: #eb9ac0;
+      padding: 14px 28px;
+      background: linear-gradient(to right, #eb9ac0, #9e6fff);
       color: #fff;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 0.3s;
+      border-radius: 8px;
       text-transform: uppercase;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
     .download-btn:hover {
-      background-color: #d981a6;
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <div class="main-nav">
       <div class="logo">
@@ -84,29 +129,34 @@
     </div>
   </header>
 
-  <div class="main-content">
+  <div class="install-container">
     <h1>Cómo instalar Windows (10 / 11)</h1>
-    <div class="install-steps">
-      <p>A continuación encontrarás una guía resumida de los pasos necesarios para instalar Windows 10 o 11 en tu equipo. Recuerda contar con una licencia válida y realizar respaldos de tus datos antes de formatear tu PC.</p>
+    <p>
+      A continuación encontrarás una guía resumida de los pasos necesarios para instalar Windows 10 o 11 en tu equipo.  
+      Recuerda contar con una licencia válida y realizar respaldos de tus datos antes de formatear tu PC.
+    </p>
+    <div class="step-list">
       <ol>
-        <li><strong>Crear un USB booteable:</strong> Descarga la herramienta oficial de Microsoft (Media Creation Tool) o utiliza Rufus para crear tu USB de instalación.</li>
+        <li><strong>Crear un USB booteable:</strong> Descarga la herramienta oficial de Microsoft (Media Creation Tool) o utiliza Rufus.</li>
         <li><strong>Configurar la BIOS/UEFI:</strong> Asegúrate de que el orden de arranque priorice la unidad USB donde está el instalador.</li>
-        <li><strong>Iniciar la instalación:</strong> Reinicia tu PC y, cuando aparezca el instalador de Windows, selecciona el idioma y la versión que desees.</li>
-        <li><strong>Seleccionar disco y particiones:</strong> Elige la partición donde deseas instalar Windows. Puedes formatear o crear nuevas particiones según tus necesidades.</li>
+        <li><strong>Iniciar la instalación:</strong> Reinicia tu PC y selecciona idioma y versión (Windows 10 u 11).</li>
+        <li><strong>Seleccionar disco y particiones:</strong> Elige la partición donde deseas instalar Windows.</li>
         <li><strong>Proceso de instalación:</strong> Espera a que el instalador copie los archivos. Tu equipo se reiniciará varias veces.</li>
-        <li><strong>Configuración inicial:</strong> Una vez finalizada la instalación, configura la cuenta, la contraseña y la privacidad según tus preferencias.</li>
-        <li><strong>Instalar controladores y actualizaciones:</strong> Usa Windows Update y/o la web de tu fabricante para descargar los drivers necesarios.</li>
+        <li><strong>Configuración inicial:</strong> Una vez finalizada, configura tu cuenta y privacidad.</li>
+        <li><strong>Instalar controladores y actualizaciones:</strong> Usa Windows Update y/o la web de tu fabricante.</li>
       </ol>
     </div>
-
     <div class="download-section">
       <h2>Descargar Windows</h2>
-      <a href="https://www.microsoft.com/es-es/software-download/windows10" class="download-btn" target="_blank" rel="noopener">Descargar Windows 10</a>
-      <a href="https://www.microsoft.com/es-es/software-download/windows11" class="download-btn" target="_blank" rel="noopener">Descargar Windows 11</a>
+      <a href="https://www.microsoft.com/es-es/software-download/windows10" 
+         target="_blank" rel="noopener" 
+         class="download-btn">Descargar Windows 10</a>
+      <a href="https://www.microsoft.com/es-es/software-download/windows11" 
+         target="_blank" rel="noopener" 
+         class="download-btn">Descargar Windows 11</a>
     </div>
   </div>
 
- 
   <script src="Jscorsair.js"></script>
 </body>
 </html>
