@@ -4,54 +4,81 @@
   <meta charset="UTF-8">
   <title>Instalación de Linux Lite</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Vincular hoja de estilos principal -->
+  <!-- Vincular hoja de estilos principal para el header -->
   <link rel="stylesheet" href="CSS.css">
   <style>
+    /* ======= FONDO GENERAL ======= */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #000;
+      background: linear-gradient(135deg, #141414 0%, #1e1e1e 100%);
       color: #fff;
     }
+
+    /* ======= CONTENEDOR PRINCIPAL ======= */
     .install-container {
       max-width: 900px;
-      margin: 80px auto 40px;
+      margin: 80px auto 40px; /* deja espacio para el header fijo */
       padding: 20px;
-      background: rgba(26, 26, 26, 0.8);
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.7); 
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px); /* si tu navegador soporta */
     }
+
+    /* ======= TÍTULO PRINCIPAL ======= */
     .install-container h1 {
       text-align: center;
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 20px;
       text-transform: uppercase;
-      color: #eb9ac0;
+      background: linear-gradient(to right, #eb9ac0, #9e6fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; 
+      /* Con esto el texto adquiere un degradado */
     }
+
+    /* ======= PÁRRAFOS ======= */
     .install-container p {
       line-height: 1.6;
       margin-bottom: 20px;
       color: #ccc;
       text-align: center;
+      font-size: 1rem;
     }
+
+    /* ======= LISTA DE PASOS ======= */
     .step-list {
-      background: #1a1a1a;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       margin-bottom: 30px;
+      border: 1px solid rgba(255,255,255,0.1);
     }
     .step-list ol {
       margin-left: 20px;
+      padding-left: 0;
     }
     .step-list li {
-      margin-bottom: 10px;
-      color: #ccc;
+      margin-bottom: 12px;
+      color: #e0e0e0;
       line-height: 1.5;
+      position: relative;
+      padding-left: 10px;
+    }
+    .step-list li::before {
+      content: "★";
+      color: #eb9ac0;
+      position: absolute;
+      left: -15px;
+      font-size: 1rem;
     }
     .step-list li strong {
       color: #fff;
     }
+
+    /* ======= SECCIÓN DESCARGA ======= */
     .download-section {
       text-align: center;
       margin-top: 20px;
@@ -62,26 +89,28 @@
       text-transform: uppercase;
       color: #eb9ac0;
     }
+
     .download-btn {
       display: inline-block;
       margin: 10px;
       padding: 14px 28px;
-      background-color: #eb9ac0;
+      background: linear-gradient(to right, #eb9ac0, #9e6fff);
       color: #fff;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 8px;
       text-transform: uppercase;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
     .download-btn:hover {
-      background-color: #d981a6;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     }
   </style>
 </head>
 <body>
+
   <!-- HEADER -->
   <header>
     <div class="main-nav">
@@ -109,7 +138,11 @@
 
   <div class="install-container">
     <h1>Cómo instalar Linux Lite</h1>
-    <p>Linux Lite es una distribución ligera ideal para equipos con recursos limitados o usuarios que busquen simplicidad. Sigue estos pasos:</p>
+    <p>
+      Linux Lite es una distribución ligera ideal para equipos con recursos limitados o usuarios que busquen simplicidad.  
+      Sigue estos pasos para la instalación:
+    </p>
+
     <div class="step-list">
       <ol>
         <li><strong>Descargar Linux Lite:</strong> Obtén la ISO oficial desde el sitio de Linux Lite.</li>
@@ -117,13 +150,17 @@
         <li><strong>Configurar la BIOS/UEFI:</strong> Ajusta el arranque para que el equipo inicie desde el USB.</li>
         <li><strong>Menú de instalación:</strong> Selecciona “Instalar Linux Lite” o prueba el modo live antes de instalar.</li>
         <li><strong>Particionado:</strong> Escoge si deseas reemplazar otro sistema o instalar junto a él. Crea particiones según tus necesidades.</li>
-        <li><strong>Proceso de instalación:</strong> Espera mientras se copian archivos y se configuran paquetes. </li>
+        <li><strong>Proceso de instalación:</strong> Espera mientras se copian archivos y se configuran paquetes.</li>
         <li><strong>Primer arranque:</strong> Configura tu usuario, contraseña, idioma y zona horaria. ¡Listo!</li>
       </ol>
     </div>
+
     <div class="download-section">
       <h2>Descargar Linux Lite</h2>
-      <a href="https://www.linuxliteos.com/download.php" target="_blank" rel="noopener" class="download-btn">Descargar Linux Lite</a>
+      <a href="https://www.linuxliteos.com/download.php" 
+         target="_blank" 
+         rel="noopener" 
+         class="download-btn">Descargar Linux Lite</a>
     </div>
   </div>
 
