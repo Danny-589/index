@@ -2,12 +2,81 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Sairus - Descargas Oficiales</title>
+  <title>Instalación de Linux Lite</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CSS.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    .install-container {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 20px;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      text-align: center;
+    }
+    .install-container h1 {
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      color: #fff;
+    }
+    .install-container p {
+      margin-bottom: 20px;
+      color: #ccc;
+      line-height: 1.6;
+    }
+    .step-list {
+      background-color: #2a2a2a;
+      padding: 20px;
+      border-radius: 6px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .step-list ol {
+      margin-left: 20px;
+    }
+    .step-list li {
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+    .step-list li strong {
+      color: #fff;
+    }
+    .download-section {
+      margin-top: 20px;
+    }
+    .download-section h2 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .download-btn {
+      display: inline-block;
+      background-color: #eb9ac0;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 4px;
+      margin: 5px;
+      text-transform: uppercase;
+      transition: background-color 0.3s;
+    }
+    .download-btn:hover {
+      background-color: #d981a6;
+    }
+  </style>
 </head>
 <body>
-
+  <!-- HEADER -->
   <header>
     <div class="main-nav">
       <div class="logo">
@@ -15,10 +84,10 @@
       </div>
       <nav>
         <ul>
-          <li><a href="#inicio">INICIO</a></li>
-          <li><a href="#instalacion">INSTALACION E INFORMACION</a></li>
-          <li><a href="#descargas">DESCARGAR</a></li>
-          <li><a href="#Autores">AUTORES</a></li>
+          <li><a href="Corsair.html">INICIO</a></li>
+          <li><a href="Corsair.html">INFORMACION</a></li>
+          <li><a href="Corsair.html">INSTALACION</a></li>
+          <li><a href="Corsair.html">AUTORES</a></li>
         </ul>
       </nav>
       <div class="nav-icons">
@@ -31,199 +100,32 @@
       </div>
     </div>
   </header>
-  
-  <main>
-    <section class="hero" id="inicio">
-      <video autoplay muted loop id="video-background">
-        <source src="Imagenes/VideoFondo.mp4" type="video/mp4">
-        Tu navegador no soporta el elemento de video.
-      </video>
-      <div class="hero-text">
-        <h1>¿QUÉ SO ES MÁS ÓPTIMO CON TU PC?</h1>
-      </div>
-      <div class="hero-button">
-        <a href="Formulario.html" class="info-btn">Formulario</a>
-      </div>
-    </section>
-    
-    <section class="guides-section" id="instalacion">
-      <h2 class="guides-title">Instalación y Sistemas Operativos (SO)</h2>
-      <div class="guides-nav">
-        <button class="guide-tab-link active" data-tab="instalacionTab">Cómo instalar un SO</button>
-        <button class="guide-tab-link" data-tab="infoTab">Información de SO</button>
-      </div>
-      
-      <div class="guides-tabs-wrapper">
-        <div class="guides-tabs-content-wrapper">
-          
-          <div class="guide-tab-content">
-            <div class="articles-container">
-              <!-- Ejemplo: Windows -->
-              <div class="article-card">
-                <a href="Windows.html" class="article-link">
-                  <img src="Imagenes/uin11.jpg" alt="Instalar Windows 10/11" class="article-img">
-                  <div class="article-info">
-                    <span class="article-category">BLOG</span>
-                    <h3>Instalar Windows 10/11</h3>
-                    <p>Guía completa para instalar Windows paso a paso.</p>
-                  </div>
-                </a>
-              </div>
-              <!-- Ubuntu -->
-              <div class="article-card">
-                <a href="Ubunto.html" class="article-link">
-                  <img src="Imagenes/ubuntu.jpg" alt="Instalar Ubuntu" class="article-img">
-                  <div class="article-info">
-                    <span class="article-category">BLOG</span>
-                    <h3>Instalar Ubuntu</h3>
-                    <p>Aprende a instalar esta popular distro de Linux.</p>
-                  </div>
-                </a>
-              </div>
-              <!-- Linux Lite -->
-              <div class="article-card">
-                <a href="Linux.html" class="article-link">
-                  <img src="Imagenes/LINUX.jpg" alt="Instalar Linux Lite" class="article-img">
-                  <div class="article-info">
-                    <span class="article-category">BLOG</span>
-                    <h3>Instalar Linux Lite</h3>
-                    <p>Pasos sencillos para equipos de bajos recursos.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="guide-tab-content" id="infoTab">
-            <div class="articles-container">
-              <!-- Windows Info -->
-              <div class="article-card">
-                <a href="info_de_uin.html" class="article-link">
-                  <img src="Imagenes/uion.jpg" alt="Información de Windows 10/11" class="article-img">
-                  <div class="article-info">
-                    <span class="article-category">BLOG</span>
-                    <h3>Windows 10/11</h3>
-                    <p>Ventajas, desventajas y requisitos del sistema.</p>
-                  </div>
-                </a>
-              </div>
-              <!-- Ubuntu Info -->
-              <div class="article-card">
-                <a href="info_de_ubuntu.html" class="article-link">
-                  <img src="Imagenes/lubuntu.jpg" alt="Información de Ubuntu" class="article-img">
-                  <div class="article-info">
-                    <span class="article-category">BLOG</span>
-                    <h3>Ubuntu</h3>
-                    <p>¿Por qué es una de las distros más populares?</p>
-                  </div>
-                </a>
-              </div>
-              <!-- Linux Lite Info -->
-              <div class="article-card">
-                <a href="info_de_linux.html" class="article-link">
-                  <img src="Imagenes/linux2.jpg" alt="Información de Linux Lite" class="article-img">
-                  <div class="article-info">
-                    <span class="article-category">BLOG</span>
-                    <h3>Linux Lite</h3>
-                    <p>Ligera, estable y fácil de usar. Conoce más detalles.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </section>
 
-    <section class="tabs-wrapper" id="descargas">
-      <div class="tabs-content-wrapper">
-        <div class="tab-content" id="categorias">
-          <div class="category-grid">
-            <!-- Windows 10 -->
-            <div class="category-card">
-              <img src="Imagenes/Teclados.jpg" alt="Windows 10" class="category-img">
-              <h3>Windows 10</h3>
-              <!-- Botón rosa que lleva a la página oficial de Windows 10 -->
-              <a 
-                href="https://www.microsoft.com/es-es/software-download/windows10" 
-                target="_blank" 
-                class="download-btn"
-              >
-                DESCARGAR UBUNTU
-              </a>
-            </div>
-            <!-- Windows 11 -->
-            <div class="category-card">
-              <img src="Imagenes/Computadora.jpg" alt="Windows 11" class="category-img">
-              <h3>Windows 11</h3>
-              <a 
-                href="https://www.microsoft.com/es-es/software-download/windows11" 
-                target="_blank" 
-                class="download-btn"
-              >
-                DESCARGAR WINDOWS 11
-              </a>
-            </div>
-            <!-- Ubuntu -->
-            <div class="category-card">
-              <img src="Imagenes/Memorias.jpg" alt="Ubuntu" class="category-img">
-              <h3>Ubuntu</h3>
-              <a 
-                href="https://ubuntu.com/download" 
-                target="_blank" 
-                class="download-btn"
-              >
-                DESCARGAR UBUNTU
-              </a>
-            </div>
-            <!-- Linux Lite -->
-            <div class="category-card">
-              <img src="Imagenes/FuentesDePoder.jpg" alt="Linux Lite" class="category-img">
-              <h3>Linux Lite</h3>
-              <a 
-                href="https://www.linuxliteos.com/download.php" 
-                target="_blank" 
-                class="download-btn"
-              >
-                DESCARGAR LINUX LITE
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="tab-content" id="destacadosProducts">
-          <p>Aquí irían tus productos destacados, sus descripciones, etc.</p>
-        </div>
-      </div>
-    </section>
-    
-    <section class="why-corsair" id="Autores">
-      <h2>AUTORES</h2>
-      <div class="why-features">
-        <a href="productos-exclusivos.html" class="feature-item">
-          <div class="icon-box">
-            <img src="Imagenes/accesorios.png" alt="Productos y sets exclusivos">
-          </div>
-          <p>Felipe Arturo Martín González(C)</p>
-        </a>
-        <a href="envio-rapido.html" class="feature-item">
-          <div class="icon-box">
-            <img src="Imagenes/Envio.png" alt="Envío rápido">
-          </div>
-          <p>Daniel Sebastián Reátegui Vélez(S)</p>
-        </a>
-        <a href="chat-en-vivo.html" class="feature-item">
-          <div class="icon-box">
-            <img src="Imagenes/Envivo.png" alt="Chat en vivo">
-          </div>
-          <p>Henry Rai Carrión Pinargote(A)</p>
-        </a>
-      </div>
-      <p class="why-more-info">"El éxito es la suma de pequeños esfuerzos, repetidos día tras día."</p><br><br>
-    </section>
-  </main>
-  
+  <div class="install-container">
+    <h1>Cómo instalar Linux Lite</h1>
+    <p>
+      Linux Lite es una distribución ligera ideal para equipos con recursos limitados  
+      o usuarios que busquen simplicidad. Sigue estos pasos:
+    </p>
+    <div class="step-list">
+      <ol>
+        <li><strong>Descargar Linux Lite:</strong> Obtén la ISO oficial desde el sitio de Linux Lite.</li>
+        <li><strong>Crear USB booteable:</strong> Usa Rufus, Etcher o UNetbootin para grabar la ISO en un pendrive.</li>
+        <li><strong>Configurar la BIOS/UEFI:</strong> Ajusta el arranque para que el equipo inicie desde el USB.</li>
+        <li><strong>Menú de instalación:</strong> Selecciona “Instalar Linux Lite” o prueba el modo live antes de instalar.</li>
+        <li><strong>Particionado:</strong> Escoge si deseas reemplazar otro sistema o instalar junto a él. Crea particiones según tus necesidades.</li>
+        <li><strong>Proceso de instalación:</strong> Espera mientras se copian archivos y se configuran paquetes.</li>
+        <li><strong>Primer arranque:</strong> Configura tu usuario, contraseña, idioma y zona horaria. ¡Listo!</li>
+      </ol>
+    </div>
+    <div class="download-section">
+      <h2>Descargar Linux Lite</h2>
+      <a href="https://www.linuxliteos.com/download.php" 
+         target="_blank" rel="noopener" 
+         class="download-btn">Descargar Linux Lite</a>
+    </div>
+  </div>
+
   <script src="Jscorsair.js"></script>
 </body>
 </html>
