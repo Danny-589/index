@@ -46,83 +46,84 @@
       <div class="hero-button">
         <a href="Formulario.html" class="info-btn">Formulario</a>
       </div>
-   
     </section>
     
-
-
-
+    <!-- Sección de Instalación y Sistemas Operativos (SO) -->
     <section class="guides-section">
       <h2 class="guides-title">Instalación y Sistemas Operativos (SO)</h2>
       <div class="guides-nav">
-        <button class="guide-tab-link active" data-tab="destacados">Instalación del SO</button>
-        <button class="guide-tab-link" data-tab="recientes">Información del SO</button>
+        <!-- Botones para cambiar de pestaña -->
+        <button class="guide-tab-link active" data-tab="instalacionTab">Cómo instalar un SO</button>
+        <button class="guide-tab-link" data-tab="infoTab">Información de SO</button>
       </div>
       <div class="guides-tabs-wrapper">
         <div class="guides-tabs-content-wrapper">
-          <div class="guide-tab-content" id="destacados">
+          <!-- Primera pestaña: Cómo instalar un SO -->
+          <div class="guide-tab-content" id="instalacionTab">
             <div class="articles-container">
               <div class="article-card">
                 <a href="articulo1.html" class="article-link">
-                  <img src="Imagenes/Rtx.jpeg" alt="GPU RTX" class="article-img">
+                  <img src="Imagenes/Rtx.jpeg" alt="Instalar Windows 10/11" class="article-img">
                   <div class="article-info">
                     <span class="article-category">BLOG</span>
-                    <h3>GPUs RTX series 5090, 5080 y 5070</h3>
-                    <p>Todo lo que necesitas saber.</p>
+                    <h3>Instalar Windows 10/11</h3>
+                    <p>Guía completa para instalar Windows paso a paso.</p>
                   </div>
                 </a>
               </div>
               <div class="article-card">
                 <a href="articulo2.html" class="article-link">
-                  <img src="Imagenes/rtxs.jpeg" alt="Comparación RTX" class="article-img">
+                  <img src="Imagenes/rtxs.jpeg" alt="Instalar Ubuntu" class="article-img">
                   <div class="article-info">
                     <span class="article-category">BLOG</span>
-                    <h3>RTX 5090 vs 5080 vs 5070</h3>
-                    <p>Diferencias explicadas para guiar tu compra.</p>
+                    <h3>Instalar Ubuntu</h3>
+                    <p>Aprende a instalar esta popular distro de Linux.</p>
                   </div>
                 </a>
               </div>
               <div class="article-card">
                 <a href="articulo3.html" class="article-link">
-                  <img src="Imagenes/poder.webp" alt="Fuente de alimentación" class="article-img">
+                  <img src="Imagenes/poder.webp" alt="Instalar Linux Lite" class="article-img">
                   <div class="article-info">
                     <span class="article-category">BLOG</span>
-                    <h3>Mejor fuente de alimentación</h3>
-                    <p>Recomendaciones para la RTX 5090.</p>
+                    <h3>Instalar Linux Lite</h3>
+                    <p>Pasos sencillos para equipos de bajos recursos.</p>
                   </div>
                 </a>
               </div>
             </div>
           </div>
-          <div class="guide-tab-content" id="recientes">
+          
+          <!-- Segunda pestaña: Información de algunos SO -->
+          <div class="guide-tab-content" id="infoTab">
             <div class="articles-container">
               <div class="article-card">
                 <a href="articulo4.html" class="article-link">
-                  <img src="Imagenes/Refrigeracion.jpeg" alt="Enfriamiento por aire" class="article-img">
+                  <img src="Imagenes/Refrigeracion.jpeg" alt="Información de Windows 10/11" class="article-img">
                   <div class="article-info">
                     <span class="article-category">BLOG</span>
-                    <h3>Enfriamiento por aire vs líquido</h3>
-                    <p>¿Cuál es la mejor opción para tu nueva GPU?</p>
+                    <h3>Windows 10/11</h3>
+                    <p>Ventajas, desventajas y requisitos del sistema.</p>
                   </div>
                 </a>
               </div>
               <div class="article-card">
                 <a href="articulo5.html" class="article-link">
-                  <img src="Imagenes/Gpu.jpeg" alt="Overclock" class="article-img">
+                  <img src="Imagenes/Gpu.jpeg" alt="Información de Ubuntu" class="article-img">
                   <div class="article-info">
                     <span class="article-category">BLOG</span>
-                    <h3>Overclock en GPUs de última generación</h3>
-                    <p>¿Cuánto rendimiento extra puedes ganar?</p>
+                    <h3>Ubuntu</h3>
+                    <p>¿Por qué es una de las distros más populares?</p>
                   </div>
                 </a>
               </div>
               <div class="article-card">
                 <a href="articulo6.html" class="article-link">
-                  <img src="Imagenes/Mantenimiento.jpeg" alt="Mantenimiento PC" class="article-img">
+                  <img src="Imagenes/Mantenimiento.jpeg" alt="Información de Linux Lite" class="article-img">
                   <div class="article-info">
                     <span class="article-category">BLOG</span>
-                    <h3>Mantenimiento preventivo</h3>
-                    <p>Alarga la vida de tu tarjeta gráfica y componentes.</p>
+                    <h3>Linux Lite</h3>
+                    <p>Ligera, estable y fácil de usar. Conoce más detalles.</p>
                   </div>
                 </a>
               </div>
@@ -133,11 +134,7 @@
     </section>
     
 
-
-
-
-
-    
+    <!-- Sección de categorías (tabs-wrapper) -->
     <section class="tabs-wrapper">
       <div class="tabs-content-wrapper">
         <div class="tab-content" id="categorias">
@@ -169,14 +166,15 @@
             </div>
           </div>
         </div>
-        <div class="tab-content" id="destacados">
+        
+        <!-- Si no usas esta sección de 'destacados' puedes eliminarla -->
+        <div class="tab-content" id="destacadosProducts">
           <p>Aquí irían tus productos destacados, sus descripciones, etc.</p>
         </div>
       </div>
     </section>
     
-   
-    
+    <!-- Sección de autores -->
     <section class="why-corsair">
       <h2>AUTORES</h2>
       <div class="why-features">
@@ -198,7 +196,6 @@
           </div>
           <p>Henry Rai Carrión Pinargote(A)</p>
         </a>
-        
       </div>
       <p class="why-more-info">"El éxito es la suma de pequeños esfuerzos, repetidos día tras día."</p><br><br>
     </section>

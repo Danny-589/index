@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Instalación de Windows 10/11</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS.css">
+  <style>
+    .install-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .install-section h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .install-section p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #ccc;
+    }
+    .steps-list {
+      margin-bottom: 30px;
+      padding-left: 1.5rem;
+    }
+    .steps-list li {
+      margin-bottom: 10px;
+    }
+
+    .additional-info {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+    }
+    .additional-info h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      color: #eb9ac0;
+    }
+    .info-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .info-card {
+      background-color: #000;
+      padding: 20px;
+      border-radius: 8px;
+      width: 280px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+    }
+    .info-card:hover {
+      transform: translateY(-5px);
+    }
+    .info-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .info-card p {
+      color: #ccc;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="main-nav">
+      <div class="logo">
+        <img src="Imagenes/Logo.png" alt="Sairus">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="Corsair.html">INICIO</a></li>
+          <li><a href="Corsair.html">INFORMACION</a></li>
+          <li><a href="Corsair.html">INSTALACION</a></li>
+          <li><a href="Corsair.html">AUTORES</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <a href="#" title="Buscar">
+          <img src="Imagenes/Buscar.png" alt="Buscar" class="icon-img">
+        </a>
+        <a href="#" title="Carrito">
+          <img src="Imagenes/Carrito.png" alt="Carrito" class="icon-img">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="margin-top: 60px;">
+    <section class="install-section">
+      <h1>Instalación de Windows 10/11</h1>
+      <p>
+        A continuación encontrarás una guía resumida de los pasos necesarios para instalar Windows 10 o 11 en tu equipo. 
+        Recuerda contar con una licencia válida y realizar respaldos de tus datos antes de formatear tu PC.
+      </p>
+      <ol class="steps-list">
+        <li><strong>Crear un USB booteable:</strong> Descarga la herramienta oficial de Microsoft (Media Creation Tool) o utiliza Rufus para crear tu USB de instalación.</li>
+        <li><strong>Configurar la BIOS/UEFI:</strong> Asegúrate de que el orden de arranque priorice la unidad USB donde está el instalador.</li>
+        <li><strong>Iniciar la instalación:</strong> Reinicia tu PC y, cuando aparezca el instalador de Windows, selecciona el idioma y la versión que desees (Windows 10 u 11).</li>
+        <li><strong>Seleccionar disco y particiones:</strong> Elige la partición donde deseas instalar Windows. Puedes formatear o crear nuevas particiones según tus necesidades.</li>
+        <li><strong>Proceso de instalación:</strong> Espera a que el instalador copie los archivos. Tu equipo se reiniciará varias veces.</li>
+        <li><strong>Configuración inicial:</strong> Una vez finalizada la instalación, configura la cuenta, la contraseña y la privacidad según tus preferencias.</li>
+        <li><strong>Instalar controladores y actualizaciones:</strong> Usa Windows Update y/o la web de tu fabricante para descargar los drivers necesarios.</li>
+      </ol>
+      <p>
+        Si deseas una instalación limpia y sin problemas, asegúrate de que tu hardware cumpla los requisitos mínimos recomendados.
+      </p>
+    </section>
+
+
+    <section class="additional-info">
+      <h2>Más Información sobre Windows 10/11</h2>
+      <div class="info-cards">
+        <div class="info-card">
+          <h3>Características Principales</h3>
+          <p>
+            Windows 10/11 ofrece una interfaz moderna, actualizaciones constantes y nuevas funciones de seguridad para mejorar tu experiencia.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Requisitos del Sistema</h3>
+          <p>
+            Asegúrate de que tu PC cumpla con los requisitos mínimos: procesador compatible, 4 GB de RAM (recomendado 8 GB o más) y suficiente espacio en disco.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Consejos de Optimización</h3>
+          <p>
+            Después de la instalación, actualiza tus drivers, personaliza la configuración de inicio y aprovecha las nuevas funciones para optimizar el rendimiento.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="Jscorsair.js"></script>
+</body>
+</html>
