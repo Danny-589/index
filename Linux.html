@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Instalación de Linux Lite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS.css">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .main-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 20px 40px;
+      text-align: center;
+    }
+    .main-content h1 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+    .install-steps {
+      text-align: left;
+      margin: 20px auto 40px;
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 800px;
+    }
+    .install-steps ol {
+      margin-left: 20px;
+      line-height: 1.6;
+    }
+    .install-steps li {
+      margin-bottom: 10px;
+    }
+    .download-section {
+      margin-top: 40px;
+    }
+    .download-btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 30px;
+      background-color: #eb9ac0;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      text-transform: uppercase;
+    }
+    .download-btn:hover {
+      background-color: #d981a6;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="main-nav">
+      <div class="logo">
+        <img src="Imagenes/Logo.png" alt="Sairus">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="Corsair.html">INICIO</a></li>
+          <li><a href="Corsair.html">INFORMACION</a></li>
+          <li><a href="Corsair.html">INSTALACION</a></li>
+          <li><a href="Corsair.html">AUTORES</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <a href="#" title="Buscar">
+          <img src="Imagenes/Buscar.png" alt="Buscar" class="icon-img">
+        </a>
+        <a href="#" title="Carrito">
+          <img src="Imagenes/Carrito.png" alt="Carrito" class="icon-img">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <h1>Cómo instalar Linux Lite</h1>
+    <div class="install-steps">
+      <p>Linux Lite es una distribución ligera ideal para equipos con recursos limitados o usuarios que busquen simplicidad. Sigue estos pasos:</p>
+      <ol>
+        <li><strong>Descargar Linux Lite:</strong> Obtén la ISO oficial desde el sitio de Linux Lite.</li>
+        <li><strong>Crear USB booteable:</strong> Utiliza herramientas como Rufus, Etcher o UNetbootin para grabar la ISO en un pendrive.</li>
+        <li><strong>Configurar la BIOS/UEFI:</strong> Ajusta el arranque para que el equipo inicie desde el USB.</li>
+        <li><strong>Menú de instalación:</strong> Selecciona “Instalar Linux Lite” o prueba el modo live antes de instalar.</li>
+        <li><strong>Particionado:</strong> Escoge si deseas reemplazar otro sistema o instalar junto a él. Crea particiones según tus necesidades (raíz, swap, home, etc.).</li>
+        <li><strong>Proceso de instalación:</strong> Espera mientras se copian archivos y se configuran paquetes. El sistema te avisará cuando finalice.</li>
+        <li><strong>Primer arranque:</strong> Configura tu nombre de usuario, contraseña, idioma y zona horaria. ¡Listo para usar Linux Lite!</li>
+      </ol>
+    </div>
+    
+    <div class="download-section">
+      <h2>Descargar Linux Lite</h2>
+      <a href="https://www.linuxliteos.com/download.php" class="download-btn" target="_blank" rel="noopener">Descargar Linux Lite</a>
+    </div>
+  </div>
+
+  <script src="Jscorsair.js"></script>
+</body>
+</html>

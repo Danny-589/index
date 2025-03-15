@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Instalación de Ubuntu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS.css">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .main-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 20px 40px;
+      text-align: center;
+    }
+    .main-content h1 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+    .install-steps {
+      text-align: left;
+      margin: 20px auto 40px;
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 800px;
+    }
+    .install-steps ol {
+      margin-left: 20px;
+      line-height: 1.6;
+    }
+    .install-steps li {
+      margin-bottom: 10px;
+    }
+    .download-section {
+      margin-top: 40px;
+    }
+    .download-btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 30px;
+      background-color: #eb9ac0;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      text-transform: uppercase;
+    }
+    .download-btn:hover {
+      background-color: #d981a6;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="main-nav">
+      <div class="logo">
+        <img src="Imagenes/Logo.png" alt="Sairus">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="Corsair.html">INICIO</a></li>
+          <li><a href="Corsair.html">INFORMACION</a></li>
+          <li><a href="Corsair.html">INSTALACION</a></li>
+          <li><a href="Corsair.html">AUTORES</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <a href="#" title="Buscar">
+          <img src="Imagenes/Buscar.png" alt="Buscar" class="icon-img">
+        </a>
+        <a href="#" title="Carrito">
+          <img src="Imagenes/Carrito.png" alt="Carrito" class="icon-img">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <h1>Cómo instalar Ubuntu</h1>
+    <div class="install-steps">
+      <p>Ubuntu es una de las distribuciones Linux más populares. A continuación, te mostramos los pasos básicos para su instalación:</p>
+      <ol>
+        <li><strong>Descargar Ubuntu:</strong> Obtén la imagen ISO oficial desde el sitio de Ubuntu.</li>
+        <li><strong>Crear USB booteable:</strong> Usa Rufus, Etcher u otra herramienta para grabar la ISO en una memoria USB.</li>
+        <li><strong>Configurar la BIOS/UEFI:</strong> Ajusta el orden de arranque para iniciar desde el USB.</li>
+        <li><strong>Seleccionar instalación:</strong> Cuando aparezca el instalador, elige “Instalar Ubuntu” o “Probar Ubuntu” (para un modo Live).</li>
+        <li><strong>Particionado:</strong> Selecciona si deseas instalar junto a otro SO o formatear el disco. Crea particiones según tus necesidades.</li>
+        <li><strong>Proceso de instalación:</strong> Espera mientras se copian los archivos. El equipo se reiniciará al finalizar.</li>
+        <li><strong>Configuración inicial:</strong> Elige tu nombre de usuario, contraseña y la configuración regional. Luego, el sistema estará listo para usar.</li>
+      </ol>
+    </div>
+    
+    <div class="download-section">
+      <h2>Descargar Ubuntu</h2>
+      <a href="https://ubuntu.com/download/desktop" class="download-btn" target="_blank" rel="noopener">Descargar Ubuntu</a>
+    </div>
+  </div>
+
+  <script src="Jscorsair.js"></script>
+</body>
+</html>
