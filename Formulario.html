@@ -2,63 +2,94 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Recomendador de Sistema Operativo y Sugerencias de Hardware</title>
+  <title>Recomendador de Sistema Operativo y Hardware</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CSS.css">
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: #000000;
-      color: #000000;
-      
+      background-color: #000; 
+      color: #fff;
     }
-    .container {
-      max-width: 700px;
-      margin: auto;
-      background: #ffffff;
+  
+    .recommend-container {
+      max-width: 900px;
+      margin: 80px auto 40px;
       padding: 20px;
+      background-color: #1a1a1a;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h1 {
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
       text-align: center;
+    }
+    .recommend-container h1 {
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      color: #fff;
+    }
+    .recommend-container p {
+      margin-bottom: 20px;
+      color: #ccc;
+      line-height: 1.6;
+    }
+    form {
+      text-align: left; 
+      max-width: 600px;
+      margin: 0 auto;
     }
     label {
       display: block;
       margin-top: 15px;
+      color: #fff;
+      font-weight: bold;
     }
     select, input {
       width: 100%;
       padding: 8px;
       margin-top: 5px;
       box-sizing: border-box;
+      background-color: #2a2a2a;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 4px;
+      outline: none;
     }
+    select:focus, input:focus {
+      border-color: #eb9ac0;
+    }
+
     button {
       margin-top: 20px;
       padding: 10px;
       width: 100%;
-      background: #007bff;
-      color: white;
+      background: #eb9ac0;
+      color: #fff;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.3s;
     }
     button:hover {
-      background: #0056b3;
+      background-color: #d981a6;
     }
+
     .result {
       margin-top: 20px;
       font-size: 18px;
       font-weight: bold;
       text-align: center;
+      color: #eb9ac0; 
+    }
+  
+    #gpuModelContainer {
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
-
-
-
 
 
   <header>
@@ -68,10 +99,10 @@
       </div>
       <nav>
         <ul>
-          <li><a href="index.html#inicio">INICIO</a></li>
-          <li><a href="index.html#instalacion">INSTALACION E INFORMACION</a></li>
-          <li><a href="index.html#descargas">DESCARGAR</a></li>
-          <li><a href="index.html#Autores">AUTORES</a></li>
+          <li><a href="Corsair.html">INICIO</a></li>
+          <li><a href="Corsair.html">INFORMACION</a></li>
+          <li><a href="Corsair.html">INSTALACION</a></li>
+          <li><a href="Corsair.html">AUTORES</a></li>
         </ul>
       </nav>
       <div class="nav-icons">
@@ -85,22 +116,21 @@
     </div>
   </header>
 
-
-
-
-<br><br>
-
-
-  <div class="container">
+  <div class="recommend-container">
     <h1>Recomendador de Sistema Operativo y Hardware</h1>
+    <p>
+      Completa la siguiente información para recibir una sugerencia de qué sistema operativo  
+      y configuración de hardware podría adaptarse mejor a tu equipo.
+    </p>
+
     <form id="osForm">
-      <!-- El procesadoor para elegir -->
       <label for="processor">Procesador</label>
       <select id="processor" required>
         <option value="1">Básico (menos de 2 GHz)</option>
         <option value="2">Intermedio (2-3 GHz)</option>
         <option value="3">Avanzado (más de 3 GHz)</option>
       </select>
+
 
       <label for="ram">RAM</label>
       <select id="ram" required>
@@ -118,28 +148,30 @@
         <option value="1024">1 TB</option>
       </select>
 
-      <!-- Seccion de la gpuuu-->
       <label for="gpuBrand">Marca de Tarjeta Gráfica</label>
       <select id="gpuBrand" required onchange="actualizarModelos()">
         <option value="">-- Selecciona una marca --</option>
+        <option value="none">Sin Tarjeta (integrada)</option>
         <option value="nvidia">Nvidia</option>
         <option value="amd">AMD</option>
         <option value="intel">Intel</option>
       </select>
 
+
       <div id="gpuModelContainer" style="display:none;">
         <label for="gpuModel">Modelo de Tarjeta Gráfica</label>
-        <select id="gpuModel" required>
+        <select id="gpuModel">
         </select>
       </div>
 
       <button type="button" onclick="recomendarOS()">Obtener Recomendación</button>
     </form>
+
     <div class="result" id="resultado"></div>
   </div>
 
   <script>
-    // "Declara"
+
     const gpuModels = {
       nvidia: [
         { value: "gtx1050", text: "Nvidia GTX 1050" },
@@ -177,10 +209,14 @@
       const modelContainer = document.getElementById("gpuModelContainer");
       const gpuModelSelect = document.getElementById("gpuModel");
 
- 
       gpuModelSelect.innerHTML = "";
 
-      if (brand && gpuModels[brand]) {
+      if (brand === "none" || brand === "") {
+        modelContainer.style.display = "none";
+        return;
+      }
+
+      if (gpuModels[brand]) {
         modelContainer.style.display = "block";
         gpuModels[brand].forEach(function(option) {
           const opt = document.createElement("option");
@@ -193,7 +229,6 @@
       }
     }
 
-    //Declara y evalua
     function recomendarOS() {
       const processor = parseInt(document.getElementById("processor").value);
       const ram = parseInt(document.getElementById("ram").value);
@@ -202,7 +237,6 @@
       const gpuModel = document.getElementById("gpuModel").value;
       let recommendations = "";
 
-      // Evalua el procesador
       if (processor === 1) {
         recommendations += "Procesador básico. Se recomienda actualizar a un procesador intermedio o avanzado para mejorar el rendimiento. ";
       } else if (processor === 2) {
@@ -211,24 +245,24 @@
         recommendations += "Procesador avanzado. ";
       }
 
-      // Evalua la ramm
       if (ram <= 4) {
-        recommendations += "La RAM es muy baja; se recomienda actualizar a al menos 8 GB para un desempeño óptimo. ";
+        recommendations += "La RAM es muy baja; se recomienda al menos 8 GB para un desempeño óptimo. ";
       } else if (ram === 8) {
         recommendations += "La RAM es aceptable, aunque se podría mejorar para mayor rendimiento. ";
       } else {
         recommendations += "La cantidad de RAM es adecuada. ";
       }
 
-      // EEvalua el disco duro (Almacenamientoo)
       if (storage <= 128) {
         recommendations += "El almacenamiento es limitado; se recomienda aumentar la capacidad para un mejor manejo de datos. ";
       } else {
         recommendations += "La capacidad de almacenamiento es adecuada. ";
       }
 
-      // Evalua el Graficaa y te recomienda un sistema operativo potimo para tu pcc
-      if (gpuBrand === "nvidia") {
+      if (gpuBrand === "none") {
+        recommendations += "Sin tarjeta gráfica dedicada. Se recomienda un sistema operativo ligero (por ejemplo, Linux Lite, Lubuntu) o Windows en configuración básica.";
+      } 
+      else if (gpuBrand === "nvidia") {
         if (["gtx1050", "gtx1650"].includes(gpuModel)) {
           recommendations += "Con tu Nvidia " + gpuModel.toUpperCase() + ", se recomienda un sistema operativo ligero o una distribución Linux básica.";
         } else if (["rtx2060", "rtx3060", "rtx3070"].includes(gpuModel)) {
@@ -236,7 +270,8 @@
         } else if (["rtx3080", "rtx3090", "rtx4090"].includes(gpuModel)) {
           recommendations += "Con tu Nvidia " + gpuModel.toUpperCase() + ", tu PC es de alta gama, ideal para Windows 10/11 o Linux avanzado.";
         }
-      } else if (gpuBrand === "amd") {
+      } 
+      else if (gpuBrand === "amd") {
         if (["rx550", "rx560", "rx570", "rx580", "rx590"].includes(gpuModel)) {
           recommendations += "Con tu AMD Radeon " + gpuModel.toUpperCase() + ", se recomienda una distribución Linux ligera o Windows 10 en configuración básica.";
         } else if (["rx5600xt", "rx5700xt"].includes(gpuModel)) {
@@ -244,9 +279,11 @@
         } else if (["rx6800", "rx6800xt", "rx6900xt"].includes(gpuModel)) {
           recommendations += "Con tu AMD Radeon " + gpuModel.toUpperCase() + ", tu equipo es potente, ideal para sistemas operativos avanzados.";
         }
-      } else if (gpuBrand === "intel") {
+      } 
+      else if (gpuBrand === "intel") {
         recommendations += "Con tu tarjeta " + gpuModel.toUpperCase() + " de Intel, se recomienda un sistema operativo ligero como Lubuntu o Linux Lite.";
-      } else {
+      } 
+      else {
         recommendations += "Por favor, revisa las especificaciones seleccionadas para una recomendación adecuada.";
       }
 
