@@ -32,14 +32,13 @@
     </div>
   </header>
   
-
   <main>
+    <!-- Sección HERO con video de fondo -->
     <section class="hero">
       <video autoplay muted loop id="video-background">
         <source src="Imagenes/VideoFondo.mp4" type="video/mp4">
         Tu navegador no soporta el elemento de video.
       </video>
-      
       <div class="hero-text">
         <h1>¿QUÉ SO ES MÁS OPTIMO CON TU PC?</h1>
       </div>
@@ -48,14 +47,19 @@
       </div>
     </section>
     
+    <!-- Sección: Instalación y Sistemas Operativos (SO) -->
     <section class="guides-section">
       <h2 class="guides-title">Instalación y Sistemas Operativos (SO)</h2>
       <div class="guides-nav">
         <button class="guide-tab-link active" data-tab="instalacionTab">Cómo instalar un SO</button>
         <button class="guide-tab-link" data-tab="infoTab">Información de SO</button>
       </div>
+      
+      <!-- Contenedor que se desplaza al cambiar de pestaña -->
       <div class="guides-tabs-wrapper">
         <div class="guides-tabs-content-wrapper">
+          
+          <!-- Pestaña 1: Cómo instalar un SO -->
           <div class="guide-tab-content" id="instalacionTab">
             <div class="articles-container">
               <div class="article-card">
@@ -91,6 +95,7 @@
             </div>
           </div>
           
+          <!-- Pestaña 2: Información de SO -->
           <div class="guide-tab-content" id="infoTab">
             <div class="articles-container">
               <div class="article-card">
@@ -125,11 +130,12 @@
               </div>
             </div>
           </div>
+          
         </div>
       </div>
     </section>
     
-
+    <!-- Sección de categorías (hay que cambiar a la de descargas) -->
     <section class="tabs-wrapper">
       <div class="tabs-content-wrapper">
         <div class="tab-content" id="categorias">
@@ -168,6 +174,7 @@
       </div>
     </section>
     
+    <!-- Sección de autores -->
     <section class="why-corsair">
       <h2>AUTORES</h2>
       <div class="why-features">
@@ -194,6 +201,7 @@
     </section>
   </main>
   
+  <!-- Script principal -->
   <script src="Jscorsair.js"></script>
 </body>
 </html>

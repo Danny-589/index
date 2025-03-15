@@ -1,3 +1,4 @@
+// Mostras/cerrar Scroll
 let lastScrollTop = 0;
 window.addEventListener("scroll", function() {
   const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -11,6 +12,25 @@ window.addEventListener("scroll", function() {
   
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
+
+const tabBtnInstalacion = document.querySelector('.guide-tab-link[data-tab="instalacionTab"]');
+const tabBtnInfo        = document.querySelector('.guide-tab-link[data-tab="infoTab"]');
+const guidesTabsContent = document.querySelector('.guides-tabs-content-wrapper');
+
+if (tabBtnInstalacion && tabBtnInfo && guidesTabsContent) {
+  tabBtnInstalacion.addEventListener('click', () => {
+    tabBtnInstalacion.classList.add('active');
+    tabBtnInfo.classList.remove('active');
+    guidesTabsContent.style.transform = 'translateX(0)';
+  });
+
+  tabBtnInfo.addEventListener('click', () => {
+    tabBtnInfo.classList.add('active');
+    tabBtnInstalacion.classList.remove('active');
+    guidesTabsContent.style.transform = 'translateX(-50%)';
+  });
+}
+
 
 const btnCategorias = document.querySelector('.tab-link[data-tab="categorias"]');
 const btnDestacados = document.querySelector('.tab-link[data-tab="destacados"]');
@@ -29,23 +49,3 @@ if (btnCategorias && btnDestacados && tabsContentWrapper) {
     tabsContentWrapper.style.transform = 'translateX(-50%)';
   });
 }
-
-const tabBtnDestacados = document.querySelector('.guide-tab-link[data-tab="destacados"]');
-const tabBtnRecientes   = document.querySelector('.guide-tab-link[data-tab="recientes"]');
-const guidesTabsContent = document.querySelector('.guides-tabs-content-wrapper');
-
-if (tabBtnDestacados && tabBtnRecientes && guidesTabsContent) {
-  tabBtnDestacados.addEventListener('click', () => {
-    tabBtnDestacados.classList.add('active');
-    tabBtnRecientes.classList.remove('active');
-    guidesTabsContent.style.transform = 'translateX(0)';
-  });
-
-  tabBtnRecientes.addEventListener('click', () => {
-    tabBtnRecientes.classList.add('active');
-    tabBtnDestacados.classList.remove('active');
-    guidesTabsContent.style.transform = 'translateX(-50%)';
-  });
-}
-
-
