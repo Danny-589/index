@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <title>Instalación de Ubuntu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Vincular hoja de estilos principal (para header y layout) -->
+  <!-- Vincular hoja de estilos principal -->
   <link rel="stylesheet" href="CSS.css">
   <style>
+    /* Fondo y tipografía */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #141414 0%, #1e1e1e 100%);
       color: #fff;
     }
+    /* Contenedor principal */
     .install-container {
       max-width: 900px;
       margin: 80px auto 40px;
@@ -22,6 +24,7 @@
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(5px);
     }
+    /* Título degradado */
     .install-container h1 {
       text-align: center;
       font-size: 2.2rem;
@@ -31,6 +34,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    /* Párrafos */
     .install-container p {
       line-height: 1.6;
       margin-bottom: 20px;
@@ -38,6 +42,7 @@
       text-align: center;
       font-size: 1rem;
     }
+    /* Lista de pasos */
     .step-list {
       background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
       padding: 20px;
@@ -67,6 +72,7 @@
     .step-list li strong {
       color: #fff;
     }
+    /* Sección de descarga */
     .download-section {
       text-align: center;
       margin-top: 20px;
@@ -122,11 +128,12 @@
     </div>
   </header>
 
+  <!-- CONTENIDO PRINCIPAL -->
   <div class="install-container">
     <h1>Cómo instalar Ubuntu</h1>
     <p>
-      Ubuntu es una de las distribuciones Linux más populares. A continuación,  
-      te mostramos los pasos básicos para su instalación:
+      Ubuntu es una de las distribuciones Linux más populares y fáciles de usar.  
+      Sigue estos pasos para instalar Ubuntu en tu equipo.
     </p>
     <div class="step-list">
       <ol>
@@ -135,15 +142,13 @@
         <li><strong>Configurar la BIOS/UEFI:</strong> Ajusta el orden de arranque para iniciar desde el USB.</li>
         <li><strong>Seleccionar instalación:</strong> Cuando aparezca el instalador, elige “Instalar Ubuntu” o “Probar Ubuntu”.</li>
         <li><strong>Particionado:</strong> Selecciona si deseas instalar junto a otro SO o formatear el disco.</li>
-        <li><strong>Proceso de instalación:</strong> Espera mientras se copian los archivos. El equipo se reiniciará al finalizar.</li>
-        <li><strong>Configuración inicial:</strong> Elige tu nombre de usuario, contraseña y la configuración regional.</li>
+        <li><strong>Proceso de instalación:</strong> Espera a que se copien los archivos. El equipo se reiniciará al finalizar.</li>
+        <li><strong>Configuración inicial:</strong> Configura tu nombre de usuario, contraseña y ajustes regionales.</li>
       </ol>
     </div>
     <div class="download-section">
       <h2>Descargar Ubuntu</h2>
-      <a href="https://ubuntu.com/download/desktop" 
-         target="_blank" rel="noopener" 
-         class="download-btn">Descargar Ubuntu</a>
+      <a href="https://ubuntu.com/download/desktop" target="_blank" rel="noopener" class="download-btn">Descargar Ubuntu</a>
     </div>
   </div>
 
