@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Sairus</title>
+  <title>Sairus - Descargas Oficiales</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Enlazamos el archivo CSS externo -->
   <link rel="stylesheet" href="CSS.css">
 </head>
 <body>
@@ -12,6 +13,7 @@
   <header>
     <div class="main-nav">
       <div class="logo">
+        <!-- Ajusta la ruta si tu logo está en otra ubicación -->
         <img src="Imagenes/Logo.png" alt="Sairus">
       </div>
       <nav>
@@ -34,6 +36,7 @@
   </header>
   
   <main>
+    <!-- SECCIÓN HERO -->
     <section class="hero" id="inicio">
       <video autoplay muted loop id="video-background">
         <source src="Imagenes/VideoFondo.mp4" type="video/mp4">
@@ -47,6 +50,7 @@
       </div>
     </section>
     
+    <!-- INSTALACIÓN E INFORMACIÓN -->
     <section class="guides-section" id="instalacion">
       <h2 class="guides-title">Instalación y Sistemas Operativos (SO)</h2>
       <div class="guides-nav">
@@ -57,6 +61,7 @@
       <div class="guides-tabs-wrapper">
         <div class="guides-tabs-content-wrapper">
           
+          <!-- Pestaña: Instalación -->
           <div class="guide-tab-content">
             <div class="articles-container">
               <!-- Ejemplo: Windows -->
@@ -95,6 +100,7 @@
             </div>
           </div>
           
+          <!-- Pestaña: Información -->
           <div class="guide-tab-content" id="infoTab">
             <div class="articles-container">
               <!-- Windows Info -->
@@ -137,34 +143,59 @@
       </div>
     </section>
 
+    <!-- DESCARGAS -->
     <section class="tabs-wrapper" id="descargas">
       <div class="tabs-content-wrapper">
         <div class="tab-content" id="categorias">
           <div class="category-grid">
             <!-- Windows 10 -->
             <div class="category-card">
-              <img src="Imagenes/Teclados.jpg" alt="Procesador" class="category-img">
-              <h3>Windows 10</h3>
-              <!-- Enlace de descarga (ejemplo: archivo zip o instalador) -->
-              <a href="downloads/windows10.zip" class="download-btn">DESCARGAR WINDOWS 10</a>
+              <img src="Imagenes/Teclados.jpg" alt="Windows 10" class="category-img">
+              <h3>WINDOWS 10</h3>
+              <!-- Botón rosa que lleva a la página oficial de Windows 10 -->
+              <a 
+                href="https://www.microsoft.com/es-es/software-download/windows10" 
+                target="_blank" 
+                class="download-btn"
+              >
+                DESCARGAR WINDOWS 10
+              </a>
             </div>
             <!-- Windows 11 -->
             <div class="category-card">
               <img src="Imagenes/Computadora.jpg" alt="Windows 11" class="category-img">
-              <h3>Windows 11</h3>
-              <a href="downloads/windows11.zip" class="download-btn">DESCARGAR WINDOWS 11</a>
+              <h3>WINDOWS 11</h3>
+              <a 
+                href="https://www.microsoft.com/es-es/software-download/windows11" 
+                target="_blank" 
+                class="download-btn"
+              >
+                DESCARGAR WINDOWS 11
+              </a>
             </div>
             <!-- Ubuntu -->
             <div class="category-card">
               <img src="Imagenes/Memorias.jpg" alt="Ubuntu" class="category-img">
-              <h3>Ubuntu</h3>
-              <a href="downloads/ubuntu.iso" class="download-btn">DESCARGAR UBUNTU</a>
+              <h3>UBUNTU</h3>
+              <a 
+                href="https://ubuntu.com/download" 
+                target="_blank" 
+                class="download-btn"
+              >
+                DESCARGAR UBUNTU
+              </a>
             </div>
             <!-- Linux Lite -->
             <div class="category-card">
               <img src="Imagenes/FuentesDePoder.jpg" alt="Linux Lite" class="category-img">
-              <h3>Linux Lite</h3>
-              <a href="downloads/linuxlite.zip" class="download-btn">DESCARGAR LINUX LITE</a>
+              <h3>LINUX LITE</h3>
+              <a 
+                href="https://www.linuxliteos.com/download.php" 
+                target="_blank" 
+                class="download-btn"
+              >
+                DESCARGAR LINUX LITE
+              </a>
             </div>
           </div>
         </div>
@@ -175,6 +206,7 @@
       </div>
     </section>
     
+    <!-- AUTORES -->
     <section class="why-corsair" id="Autores">
       <h2>AUTORES</h2>
       <div class="why-features">
@@ -201,6 +233,7 @@
     </section>
   </main>
   
+  <!-- Tu JavaScript (si lo necesitas) -->
   <script src="Jscorsair.js"></script>
 </body>
 </html>
