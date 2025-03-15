@@ -335,9 +335,11 @@ main {
   background-color: #d981a6; /* Un tono más oscuro al pasar el ratón */
 }
 
-/* AUTORES */
+/* AUTORES (PARTE INFERIOR) */
 .why-corsair {
-  background-color: #000;
+  /* Antes estaba #000, ahora un gradiente gris */
+  background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
+  /* O si prefieres un color fijo: background-color: #1a1a1a; */
   text-align: center;
   padding: 40px 20px;
 }
