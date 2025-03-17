@@ -1,3 +1,4 @@
+/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
@@ -80,6 +81,7 @@ main {
   margin-top: 62px; 
 }
 
+/* HERO SECTION */
 .hero {
   position: relative;
   width: 100%;
@@ -133,6 +135,7 @@ main {
   background-color: #2C6175;
 }
 
+/* SECCIÓN GUÍAS (INSTALACIÓN / INFORMACIÓN) */
 .guides-section {
   background-color: #1a1a1a;
   padding: 40px 20px;
@@ -314,10 +317,11 @@ main {
   text-transform: uppercase;
 }
 
+/* Botón de descarga */
 .download-btn {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #2C6175;
+  background-color: #2C6175; /* Rosa */
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -328,11 +332,14 @@ main {
 }
 
 .download-btn:hover {
-  background-color: #2C6175;
+  background-color: #2C6175; /* Un tono más oscuro al pasar el ratón */
 }
 
+/* AUTORES (PARTE INFERIOR) */
 .why-corsair {
+  /* Antes estaba #000, ahora un gradiente gris */
   background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
+  /* O si prefieres un color fijo: background-color: #1a1a1a; */
   text-align: center;
   padding: 40px 20px;
 }
@@ -406,6 +413,7 @@ main {
   text-decoration: underline;
 }
 
+/* SLIDE (opcional, si usas un slider) */
 .slide {
   position: absolute;
   top: 0;
@@ -420,16 +428,4 @@ main {
 
 .slide.active {
   opacity: 1;
-}
-
-.gradient-text {
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.download-btn, .article-category, .guide-tab-link.active::after, .why-more-info {
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
