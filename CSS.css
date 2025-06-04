@@ -332,7 +332,7 @@ main {
 }
 
 .download-btn:hover {
-  background-color: #2C6175; /* Un tono más oscuro al pasar el ratón */
+  background-color: #2C6175; 
 }
 
 /* AUTORES (PARTE INFERIOR) */
@@ -413,7 +413,7 @@ main {
   text-decoration: underline;
 }
 
-/* SLIDE (opcional, si usas un slider) */
+/* SLIDE */
 .slide {
   position: absolute;
   top: 0;

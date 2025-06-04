@@ -5,10 +5,10 @@ window.addEventListener("scroll", function() {
   const header = document.querySelector("header");
   
   if (currentScroll > lastScrollTop) {
-    // Scrolleando hacia abajo -> ocultar header
+    // Scroll de abajo y el hearth
     header.classList.add("hide-header");
   } else {
-    // Scrolleando hacia arriba -> mostrar header
+    // Scroll arriba y mostrar hearth
     header.classList.remove("hide-header");
   }
   
